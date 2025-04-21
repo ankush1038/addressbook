@@ -4,10 +4,15 @@ import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
-public class AddressBookDTO {
+@AllArgsConstructor
+@NoArgsConstructor
+public @ToString class AddressBookDTO {
 
     @Pattern(regexp = "^[A-Z][a-zA-Z\\s]{2,}$", message = "Name must start with a capital letter and have atleast 3 letters")
     private String name;
