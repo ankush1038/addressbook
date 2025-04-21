@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class AddressBookDTO {
 
-    @Pattern(regexp = "^[A-Z][a-zA-Z//s]{2,}$", message = "Name must start with a capital letter and have atleast 3 letters")
+    @Pattern(regexp = "^[A-Z][a-zA-Z\\s]{2,}$", message = "Name must start with a capital letter and have atleast 3 letters")
     private String name;
 
    @NotBlank(message = "City must not be empty")

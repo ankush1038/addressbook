@@ -56,24 +56,24 @@ public class AddressBookController {
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
-    @GetMapping("/addresses/{city}")
+    @GetMapping("/city/{city}")
     public ResponseEntity<ResponseDTO> getAddressByCity(@PathVariable String city){
         List<AddressBook> addressBooks = addressBookService.getAddressByCity(city);
         ResponseDTO responseDTO = new ResponseDTO("List of addresses: ", addressBooks);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
-    @GetMapping("/addresses/{state}")
+    @GetMapping("/state/{state}")
     public ResponseEntity<ResponseDTO> getAddressByState(@PathVariable String state){
         List<AddressBook> addressBooks = addressBookService.getAddressByState(state);
         ResponseDTO responseDTO = new ResponseDTO("List of addresses: ", addressBooks);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
-    @GetMapping("/addresses/{phoneNumber}")
+    @GetMapping("/phone/{phoneNumber}")
     public ResponseEntity<ResponseDTO> getAddressByPhoneNumber(@PathVariable long phoneNumber){
         AddressBook addressBook = addressBookService.getAddressByPhoneNumber(phoneNumber);
-        ResponseDTO responseDTO = new ResponseDTO("Address found with phone number: ", phoneNumber);
+        ResponseDTO responseDTO = new ResponseDTO("Address found with phone number: " , + phoneNumber);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
